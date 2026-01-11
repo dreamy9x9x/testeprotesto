@@ -2,50 +2,117 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Protesto</title>
+    <title>crackia núremu</title>
     <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Courier New", monospace;
+        }
+
         body {
             margin: 0;
-            background-color: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100vh;
+            background: radial-gradient(circle at center, #020202, #000000);
+            color: #00ff88;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        .container {
-            position: relative;
-            display: inline-block;
+        /* Efeito de linhas (scanlines) */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(0, 255, 136, 0.03),
+                rgba(0, 255, 136, 0.03) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            pointer-events: none;
         }
 
-        .container img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .texto {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 48px;
-            font-weight: bold;
+        .panel {
+            width: 90%;
+            max-width: 900px;
+            padding: 40px;
+            border: 2px solid #00ff88;
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+            background: rgba(0, 0, 0, 0.85);
             text-align: center;
-            text-shadow: 3px 3px 8px black;
-            padding: 20px;
-            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .title {
+            font-size: 42px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            text-shadow:
+                0 0 10px #00ff88,
+                0 0 20px #00ff88;
+        }
+
+        textarea {
+            width: 100%;
+            height: 140px;
+            background: #000;
+            border: 2px solid #00ff88;
+            color: #00ff88;
+            padding: 15px;
+            font-size: 16px;
+            resize: none;
+            outline: none;
+            box-shadow: inset 0 0 15px rgba(0, 255, 136, 0.3);
+        }
+
+        textarea::placeholder {
+            color: rgba(0, 255, 136, 0.5);
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            background: #00ff88;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow:
+                0 0 10px #00ff88,
+                0 0 25px #00ff88;
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            background: #00cc6e;
+            box-shadow:
+                0 0 20px #00ff88,
+                0 0 40px #00ff88;
+        }
+
+        button:active {
+            transform: scale(0.96);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="https://i.pinimg.com/564x/9a/e6/00/9ae600096c53c274db368199f8a58871.jpg" alt="Imagem do protesto">
-        <div class="texto">
-            Defaced by dreamy9x9x/gato_mp9,<br>
-            FORA DARKNESXZ SKIDDER E PANELEIRO
+
+    <div class="panel">
+        <div class="title">
+            CLONADOR DE WHATSAPP - Team Underground Cyber Hunters
         </div>
+
+        <textarea placeholder="Digite o numero pra hackear..."></textarea>
+
+        <br>
+
+        <button>Logar no numero</button>
     </div>
+
 </body>
 </html>
